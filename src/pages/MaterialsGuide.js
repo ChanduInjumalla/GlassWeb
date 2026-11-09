@@ -36,18 +36,21 @@ export function renderMaterialsGuidePage() {
     </section>
 
     <section class="section section-dark">
-      <div class="container-sm">
-        <div class="reveal" style="margin-bottom:3rem;">
+      <div class="container">
+        <div class="reveal" style="max-width:680px; margin:0 auto 2.5rem; text-align:center;">
           <p class="body-lg" style="color:var(--text-secondary);">
             Not all glass is the same. The right specification depends on the application, structural requirements and the result you want to achieve. Here's a guide to the main types we work with.
           </p>
         </div>
-        ${materials.map((m, i) => `
-          <div class="reveal" style="padding:2rem 0; border-bottom:1px solid var(--border); display:grid; grid-template-columns:240px 1fr; gap:2rem; align-items:baseline;">
-            <h2 style="font-size:var(--text-lg); font-weight:600; color:var(--text-primary);">${m.title}</h2>
-            <p style="color:var(--text-secondary); line-height:1.8;">${m.desc}</p>
-          </div>
-        `).join('')}
+        <div class="materials-grid">
+          ${materials.map((m, i) => `
+            <div class="material-card reveal">
+              <div class="material-card-num">${String(i + 1).padStart(2, '0')}</div>
+              <h2 class="material-card-title">${m.title}</h2>
+              <p class="material-card-desc">${m.desc}</p>
+            </div>
+          `).join('')}
+        </div>
       </div>
     </section>
 

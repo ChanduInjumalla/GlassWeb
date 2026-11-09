@@ -69,29 +69,31 @@ export function renderProjectsPage() {
     <div class="project-modal-backdrop" id="project-modal" aria-hidden="true" style="display:none;">
       <div class="project-modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
         <button class="project-modal-close" id="modal-close-btn" aria-label="Close dialog">&times;</button>
-        <div class="project-modal-grid">
+        <div class="project-modal-body">
           <div class="project-modal-img-wrap">
             <img id="modal-project-img" src="" alt="" />
           </div>
           <div class="project-modal-info">
-            <div class="modal-badge-row">
-              <span class="badge" id="modal-cat-badge">Glass</span>
-              <span class="badge badge-outline" id="modal-type-badge">Residential</span>
-            </div>
-            <h3 class="h3" id="modal-project-title" style="margin-top:0.75rem; margin-bottom:0.5rem; color:#fff;"></h3>
-            <p id="modal-project-loc" style="color:var(--primary); font-weight:500; font-size:0.95rem; margin-bottom:1.25rem; display:flex; align-items:center; gap:6px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span></span>
-            </p>
-            <p id="modal-project-desc" style="color:var(--text-secondary); line-height:1.7; margin-bottom:1.5rem; font-size:0.95rem;"></p>
-            
-            <div style="margin-bottom:1.5rem;">
-              <div style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); margin-bottom:0.5rem; font-weight:600;">Services Included</div>
-              <div id="modal-services-tags" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
+            <div>
+              <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+                <span class="tag" id="modal-cat-badge">Glass</span>
+                <span class="tag" id="modal-type-badge" style="background:var(--surface);">Residential</span>
+              </div>
+              <h3 class="h3" id="modal-project-title" style="margin-top:0.5rem; margin-bottom:0.5rem; color:var(--text-primary);"></h3>
+              <p id="modal-project-loc" style="color:var(--accent); font-weight:500; font-size:0.9rem; margin-bottom:1rem; display:flex; align-items:center; gap:6px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span></span>
+              </p>
+              <p id="modal-project-desc" style="color:var(--text-secondary); line-height:1.65; margin-bottom:1.25rem; font-size:0.9rem;"></p>
+              
+              <div style="margin-bottom:1rem;">
+                <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); margin-bottom:0.5rem; font-weight:600;">Services Included</div>
+                <div id="modal-services-tags" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
+              </div>
             </div>
 
-            <div style="padding-top:1rem; border-top:1px solid rgba(255,255,255,0.08);">
-              <a href="/get-quote/" class="btn btn-primary" data-route="/get-quote/" id="modal-quote-link" style="width:100%; text-align:center;">
+            <div style="padding-top:1rem; border-top:1px solid var(--border);">
+              <a href="/get-quote/" class="btn btn-primary" data-route="/get-quote/" id="modal-quote-link" style="width:100%; justify-content:center;">
                 Get Free Quote for Similar Work
               </a>
             </div>
@@ -159,16 +161,18 @@ export function renderProjectsPage() {
     modalTypeBadge.textContent = (p.type || 'Residential').toUpperCase();
 
     modalTags.innerHTML = (p.services || []).map(s => `
-      <span style="display:inline-block; font-size:0.8rem; background:rgba(255,255,255,0.06); padding:4px 10px; border-radius:4px; border:1px solid rgba(255,255,255,0.1); color:var(--text-secondary);">${s}</span>
+      <span class="service-family-chip">${s}</span>
     `).join('');
 
     modal.style.display = 'flex';
+    modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
     if (!modal) return;
+    modal.classList.remove('active');
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';

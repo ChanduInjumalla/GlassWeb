@@ -338,21 +338,21 @@ export function renderHomePage() {
           <div class="section-label" style="justify-content:center;">Customer Feedback</div>
           <h2 class="h2" id="reviews-h2">What our customers say</h2>
         </div>
-        <div class="popular-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="testimonials-grid">
           ${[
             { name: 'Ravi K.', area: 'Kondapur', service: 'Shower Cubicle', text: 'Very professional from measurement to installation. The frameless glass cubicle looks excellent. Clean work.' },
             { name: 'Priya M.', area: 'Gachibowli', service: 'UPVC Windows', text: 'Had all windows replaced with UPVC sliding windows. Good quality, accurate measurement and neat installation.' },
             { name: 'Suresh B.', area: 'Banjara Hills', service: 'Glass Railing', text: 'Glass balcony railing with stainless spigots. Really happy with the finish — clear glass and solid hardware.' },
           ].map((r, i) => `
-            <div class="reveal reveal-delay-${i+1}" style="padding:2rem; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-lg);">
-              <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.25rem;">
-                <div style="width:40px; height:40px; border-radius:50%; background:var(--accent-muted); display:flex; align-items:center; justify-content:center; font-weight:600; color:var(--accent); font-size:0.875rem;">${r.name.charAt(0)}</div>
+            <div class="testimonial-card reveal reveal-delay-${i+1}">
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">${r.name.charAt(0)}</div>
                 <div>
-                  <div style="font-weight:600; font-size:var(--text-sm); color:var(--text-primary);">${r.name}</div>
-                  <div style="font-size:var(--text-xs); color:var(--text-muted);">${r.area} · ${r.service}</div>
+                  <div class="testimonial-name">${r.name}</div>
+                  <div class="testimonial-meta">${r.area} · ${r.service}</div>
                 </div>
               </div>
-              <blockquote style="font-size:var(--text-sm); color:var(--text-secondary); line-height:1.7; font-style:italic; margin:0;">"${r.text}"</blockquote>
+              <blockquote class="testimonial-quote">"${r.text}"</blockquote>
             </div>
           `).join('')}
         </div>

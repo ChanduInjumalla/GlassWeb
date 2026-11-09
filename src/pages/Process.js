@@ -27,7 +27,7 @@ export function renderProcessPage() {
 
     <section class="section section-dark">
       <div class="container">
-        <div class="process-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="process-grid">
           ${[
             { num: '01', title: 'Enquire', desc: 'Contact us by phone, WhatsApp or the website form. Share your requirements and project location.' },
             { num: '02', title: 'Site Visit & Measurement', desc: 'Our team visits your site, assesses conditions, takes precise measurements and discusses the specification with you.' },

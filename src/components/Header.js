@@ -66,42 +66,56 @@ export function renderHeader() {
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-modal="true" hidden>
-      <div class="mobile-nav-section">
-        <div class="mobile-nav-title">Glass Services</div>
-        <a href="/glass-services-hyderabad/" class="mobile-nav-link" data-route="/glass-services-hyderabad/">All Glass Services <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
-        ${GLASS_SERVICES.slice(0, 5).map(s => `<a href="/${s.slug}/" class="mobile-sub-link" data-route="/${s.slug}/">${s.title}</a>`).join('')}
+      <div class="mobile-nav-section" style="padding-top:0.5rem;">
+        <div class="mobile-nav-title">Browse by Category</div>
+        <div class="mobile-cat-grid">
+          <a href="/glass-services-hyderabad/" class="mobile-cat-card" data-route="/glass-services-hyderabad/">
+            <span class="mobile-cat-name">Glass Services</span>
+            <span class="mobile-cat-count">${GLASS_SERVICES.length} services →</span>
+          </a>
+          <a href="/upvc-windows-doors-hyderabad/" class="mobile-cat-card" data-route="/upvc-windows-doors-hyderabad/">
+            <span class="mobile-cat-name">UPVC Windows</span>
+            <span class="mobile-cat-count">${UPVC_SERVICES.length} services →</span>
+          </a>
+          <a href="/aluminium-doors-windows-hyderabad/" class="mobile-cat-card" data-route="/aluminium-doors-windows-hyderabad/">
+            <span class="mobile-cat-name">Aluminium</span>
+            <span class="mobile-cat-count">${ALUMINIUM_SERVICES.length} services →</span>
+          </a>
+          <a href="/iron-metal-fabrication-hyderabad/" class="mobile-cat-card" data-route="/iron-metal-fabrication-hyderabad/">
+            <span class="mobile-cat-name">Iron & Metal</span>
+            <span class="mobile-cat-count">${METAL_SERVICES.length} services →</span>
+          </a>
+        </div>
       </div>
       <div class="mobile-nav-divider"></div>
       <div class="mobile-nav-section">
-        <div class="mobile-nav-title">UPVC</div>
-        <a href="/upvc-windows-doors-hyderabad/" class="mobile-nav-link" data-route="/upvc-windows-doors-hyderabad/">All UPVC Solutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
-        ${UPVC_SERVICES.slice(0, 3).map(s => `<a href="/${s.slug}/" class="mobile-sub-link" data-route="/${s.slug}/">${s.title}</a>`).join('')}
+        <div class="mobile-nav-title">Popular Services</div>
+        <div class="mobile-sub-grid">
+          ${[
+            ...GLASS_SERVICES.slice(0, 4),
+            ...UPVC_SERVICES.slice(0, 2),
+            ...ALUMINIUM_SERVICES.slice(0, 2),
+            ...METAL_SERVICES.slice(0, 2),
+          ].map(s => `<a href="/${s.slug}/" class="mobile-sub-chip" data-route="/${s.slug}/">${s.title}</a>`).join('')}
+        </div>
       </div>
       <div class="mobile-nav-divider"></div>
       <div class="mobile-nav-section">
-        <div class="mobile-nav-title">Aluminium</div>
-        <a href="/aluminium-doors-windows-hyderabad/" class="mobile-nav-link" data-route="/aluminium-doors-windows-hyderabad/">All Aluminium <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
-        ${ALUMINIUM_SERVICES.slice(0, 3).map(s => `<a href="/${s.slug}/" class="mobile-sub-link" data-route="/${s.slug}/">${s.title}</a>`).join('')}
+        <div class="mobile-nav-title">Company & Portfolio</div>
+        <div class="mobile-links-grid">
+          <a href="/projects/" class="mobile-nav-link" data-route="/projects/">Projects <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/about/" class="mobile-nav-link" data-route="/about/">About Us <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/process/" class="mobile-nav-link" data-route="/process/">Our Process <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/faq/" class="mobile-nav-link" data-route="/faq/">FAQs <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/service-areas-hyderabad/" class="mobile-nav-link" data-route="/service-areas-hyderabad/">Service Areas <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <a href="/contact/" class="mobile-nav-link" data-route="/contact/">Contact <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
       </div>
-      <div class="mobile-nav-divider"></div>
-      <div class="mobile-nav-section">
-        <div class="mobile-nav-title">Metal</div>
-        <a href="/iron-metal-fabrication-hyderabad/" class="mobile-nav-link" data-route="/iron-metal-fabrication-hyderabad/">All Metal Works <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
-        ${METAL_SERVICES.slice(0, 3).map(s => `<a href="/${s.slug}/" class="mobile-sub-link" data-route="/${s.slug}/">${s.title}</a>`).join('')}
-      </div>
-      <div class="mobile-nav-divider"></div>
-      <div class="mobile-nav-section">
-        <a href="/projects/" class="mobile-nav-link" data-route="/projects/">Projects</a>
-        <a href="/about/" class="mobile-nav-link" data-route="/about/">About</a>
-        <a href="/process/" class="mobile-nav-link" data-route="/process/">Our Process</a>
-        <a href="/faq/" class="mobile-nav-link" data-route="/faq/">FAQ</a>
-        <a href="/contact/" class="mobile-nav-link" data-route="/contact/">Contact</a>
-      </div>
-      <div style="padding: 1.5rem 0;">
-        <a href="/get-quote/" class="btn btn-primary w-full" style="justify-content:center; width:100%;" data-route="/get-quote/">Get Free Quote</a>
-        <a href="tel:${BUSINESS.phone.replace(/[^0-9+]/g, '')}" class="btn btn-outline w-full" style="justify-content:center; width:100%; margin-top:0.75rem;">
+      <div class="mobile-nav-cta-row">
+        <a href="/get-quote/" class="btn btn-primary" data-route="/get-quote/">Get Free Quote</a>
+        <a href="tel:${BUSINESS.phone.replace(/[^0-9+]/g, '')}" class="btn btn-outline">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1.06h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          Call Us
+          Call Now
         </a>
       </div>
     </div>
@@ -138,6 +152,7 @@ export function renderHeader() {
   hamburger?.addEventListener('click', () => {
     const isOpen = hamburger.classList.toggle('open');
     hamburger.setAttribute('aria-expanded', String(isOpen));
+    document.querySelector('.site-header')?.classList.toggle('menu-open', isOpen);
     if (mobileNavEl) {
       mobileNavEl.hidden = !isOpen;
       mobileNavEl.classList.toggle('open', isOpen);
@@ -150,6 +165,7 @@ export function renderHeader() {
     if (link) {
       hamburger?.classList.remove('open');
       hamburger?.setAttribute('aria-expanded', 'false');
+      document.querySelector('.site-header')?.classList.remove('menu-open');
       mobileNavEl.hidden = true;
       mobileNavEl.classList.remove('open');
       document.body.style.overflow = '';

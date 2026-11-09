@@ -59,13 +59,13 @@ export function renderAboutPage() {
           <div class="section-label" style="justify-content:center;">Our Services</div>
           <h2 class="h2" id="services-h2">Four areas of specialisation</h2>
         </div>
-        <div class="service-families-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="service-families-grid about-specialisations-grid">
           ${SERVICE_HUBS.map((hub, i) => `
-            <a href="/${hub.slug}/" class="service-family-card reveal reveal-delay-${i+1}" data-route="/${hub.slug}/" style="text-decoration:none; cursor:pointer;">
+            <a href="/${hub.slug}/" class="service-family-card reveal reveal-delay-${i+1}" data-route="/${hub.slug}/">
               <div class="service-family-body">
                 <div class="process-num">${String(i + 1).padStart(2, '0')}</div>
                 <h3 class="service-family-title">${hub.title}</h3>
-                <p class="service-family-desc">${hub.intro.substring(0, 120)}...</p>
+                <p class="service-family-desc">${hub.intro.substring(0, 110)}...</p>
                 <span class="service-card-link">
                   Explore
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
@@ -78,21 +78,22 @@ export function renderAboutPage() {
     </section>
 
     <section class="section section-dark" aria-labelledby="values-h2">
-      <div class="container-sm">
-        <div class="text-center reveal" style="margin-bottom:3rem;">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom:2.5rem;">
           <div class="section-label" style="justify-content:center;">How We Work</div>
           <h2 class="h2" id="values-h2">Our approach</h2>
         </div>
-        <div style="display:flex; flex-direction:column; gap:0;" class="reveal">
+        <div class="values-grid reveal">
           ${[
-            { title: 'Precision', desc: 'Every project starts with an on-site measurement. No guesswork, no assumptions.' },
-            { title: 'Material Integrity', desc: 'We specify and use quality materials appropriate for each application.' },
-            { title: 'Clean Installation', desc: 'Our installation team works professionally and leaves a clean site.' },
-            { title: 'One Team', desc: 'From enquiry through to handover — you deal with Star Creative throughout.' },
+            { num: '01', title: 'Precision', desc: 'Every project starts with an on-site measurement. No guesswork, no assumptions.' },
+            { num: '02', title: 'Material Integrity', desc: 'We specify and use quality materials appropriate for each application.' },
+            { num: '03', title: 'Clean Installation', desc: 'Our installation team works professionally and leaves a clean site.' },
+            { num: '04', title: 'One Team', desc: 'From enquiry through to handover — you deal with Star Creative throughout.' },
           ].map(v => `
-            <div style="padding:1.5rem 0; border-bottom:1px solid var(--border); display:grid; grid-template-columns:200px 1fr; gap:2rem; align-items:baseline;">
-              <div style="font-weight:600; color:var(--text-primary);">${v.title}</div>
-              <div style="color:var(--text-secondary); line-height:1.7;">${v.desc}</div>
+            <div class="value-card">
+              <div class="value-card-num">${v.num}</div>
+              <div class="value-card-title">${v.title}</div>
+              <div class="value-card-desc">${v.desc}</div>
             </div>
           `).join('')}
         </div>
