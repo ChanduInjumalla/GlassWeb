@@ -612,7 +612,7 @@ body.is-homepage .site-header:not(.scrolled):not(.menu-open) .hamburger span { b
   bottom: 0;
   z-index: 999;
   background: var(--white);
-  padding: calc(var(--header-h) + 0.75rem) var(--gutter) 5.5rem;
+  padding: calc(var(--header-h) + 0.75rem) var(--gutter) 2.5rem;
   overflow-y: auto;
   transform: translateX(100%);
   transition: transform var(--dur-slow) var(--ease);
@@ -694,17 +694,11 @@ body.is-homepage .site-header:not(.scrolled):not(.menu-open) .hamburger span { b
   border-bottom: 1px solid var(--border-light);
 }
 .mobile-nav-link svg { width: 15px; height: 15px; color: var(--text-muted); }
-.mobile-nav-cta-row {
+.mobile-nav-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.65rem;
-  padding: 1rem 0 0.5rem;
-}
-.mobile-nav-cta-row .btn {
-  width: 100%;
-  justify-content: center;
-  padding: 0.8rem 0.75rem;
-  font-size: 0.85rem;
+  grid-template-columns: 1fr 1fr 1.15fr;
+  gap: 0.55rem;
+  padding: 0.25rem 0 0.5rem;
 }
 .mobile-nav-divider {
   height: 1px;
@@ -730,9 +724,9 @@ body.is-homepage .site-header:not(.scrolled):not(.menu-open) .hamburger span { b
 /* ---- HERO --------------------------------------------------- */
 .homepage-hero {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
-  max-height: 100vh;
+  height: 70vh;
+  min-height: 540px;
+  max-height: 70vh;
   display: flex;
   align-items: center;
   padding-top: var(--header-h);
@@ -3079,10 +3073,10 @@ body.is-homepage .site-header:not(.scrolled):not(.menu-open) .hamburger span { b
     font-size: 0.72rem;
   }
   .homepage-hero {
-    height: auto;
+    height: 70vh;
     max-height: none;
-    min-height: 600px;
-    padding: calc(var(--header-h) + 3rem) 0 3.5rem;
+    min-height: 520px;
+    padding: calc(var(--header-h) + 2rem) 0 2.5rem;
   }
   .hero-content {
     grid-template-columns: 1fr;
@@ -3164,10 +3158,6 @@ body.is-homepage .site-header:not(.scrolled):not(.menu-open) .hamburger span { b
     --sp-section: 3rem;
   }
 
-  body {
-    padding-bottom: 68px;
-  }
-
   /* Header & Navigation */
   .main-nav { display: none; }
   .header-phone { display: none; }
@@ -3182,11 +3172,10 @@ body.is-homepage .site-header:not(.scrolled):not(.menu-open) .hamburger span { b
     margin-right: 0.75rem;
   }
   .hamburger { display: flex; }
-  .mobile-action-bar { display: block; }
-  /* Hide duplicate floating WhatsApp bubble on mobile because bottom bar has WhatsApp */
+  .mobile-action-bar { display: none !important; }
   .wa-bubble { display: none; }
   .back-to-top {
-    bottom: 4.75rem;
+    bottom: 1.25rem;
     right: 1rem;
     width: 38px;
     height: 38px;
@@ -3209,12 +3198,12 @@ body.is-homepage .site-header:not(.scrolled):not(.menu-open) .hamburger span { b
     line-height: 1.6;
   }
 
-  /* Homepage Hero — Clean, Unclipped, Compact */
+  /* Homepage Hero — 70vh on Mobile */
   .homepage-hero {
-    height: auto;
+    height: 70vh;
+    min-height: 70vh;
     max-height: none;
-    min-height: 480px;
-    padding: calc(var(--header-h) + 2rem) 0 2.25rem;
+    padding: calc(var(--header-h) + 1.25rem) 0 1.75rem;
     align-items: flex-end;
   }
   .hero-glass-accent { display: none; }
