@@ -409,24 +409,23 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 .site-logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.5rem;
   text-decoration: none;
   flex-shrink: 0;
 }
 .logo-mark {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border-radius: 9px;
-  box-shadow: 0 3px 12px rgba(30, 86, 160, 0.25);
-  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+  background: transparent;
+  color: var(--text-primary);
+  transition: transform var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
 }
 .site-logo:hover .logo-mark {
-  transform: translateY(-1px) scale(1.03);
-  box-shadow: 0 5px 16px rgba(30, 86, 160, 0.35);
+  transform: scale(1.04);
 }
 .logo-mark svg {
   width: 100%;
@@ -500,7 +499,7 @@ body.is-homepage .site-header:not(.scrolled):not(.menu-open) .logo-name { color:
 body.is-homepage .site-header:not(.scrolled):not(.menu-open) .logo-name-accent { color: #60A5FA; }
 body.is-homepage .site-header:not(.scrolled):not(.menu-open) .logo-tagline { color: rgba(255, 255, 255, 0.65); }
 body.is-homepage .site-header:not(.scrolled):not(.menu-open) .logo-mark {
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25), 0 4px 16px rgba(0, 0, 0, 0.35);
+  color: var(--white);
 }
 body.is-homepage .site-header:not(.scrolled):not(.menu-open) .nav-link { color: var(--white-80); }
 body.is-homepage .site-header:not(.scrolled):not(.menu-open) .nav-link:hover,
