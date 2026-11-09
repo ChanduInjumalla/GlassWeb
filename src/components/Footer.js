@@ -11,7 +11,31 @@ export function renderFooter() {
       <div class="container">
         <div class="footer-top">
           <div class="footer-brand">
-            <span class="logo-name">Star Creative</span>
+            <a href="/" class="site-logo footer-logo" data-route="/" aria-label="Star Creative — Home">
+              <span class="logo-mark" aria-hidden="true">
+                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="scLogoBgFtr" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#2563EB"/>
+                      <stop offset="100%" stop-color="#1E3A8A"/>
+                    </linearGradient>
+                    <linearGradient id="scGlassPaneFtr" x1="6" y1="6" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.45"/>
+                      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="36" height="36" rx="9" fill="url(#scLogoBgFtr)"/>
+                  <rect x="6.5" y="6.5" width="16" height="16" rx="3" fill="url(#scGlassPaneFtr)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+                  <rect x="13.5" y="13.5" width="16" height="16" rx="3" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+                  <path d="M18 5.5L20.6 15.4L30.5 18L20.6 20.6L18 30.5L15.4 20.6L5.5 18L15.4 15.4L18 5.5Z" fill="#FFFFFF"/>
+                  <circle cx="18" cy="18" r="2.2" fill="#1E3A8A"/>
+                </svg>
+              </span>
+              <span class="logo-text-group">
+                <span class="logo-name">Star <span class="logo-name-accent">Creative</span></span>
+                <span class="logo-tagline">Glass · UPVC · Interiors</span>
+              </span>
+            </a>
             <p class="footer-brand-desc">
               Architectural glass, UPVC windows & doors, aluminium systems and iron/metal fabrication — measured, fabricated and installed in Hyderabad.
             </p>
