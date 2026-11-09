@@ -140,7 +140,7 @@ export function updatePageMeta({ title, description, canonical, noindex = false 
   if (canonicalLink && canonical) {
     canonicalLink.setAttribute('href', canonical);
   } else if (canonicalLink) {
-    canonicalLink.setAttribute('href', `https://www.starcreativehyd.com${window.location.pathname}`);
+    canonicalLink.setAttribute('href', `https://www.starcreative.in${window.location.pathname}`);
   }
 
   // Robots
@@ -155,7 +155,7 @@ export function updatePageMeta({ title, description, canonical, noindex = false 
   const ogUrl = document.getElementById('og-url');
   if (ogTitle && title) ogTitle.setAttribute('content', title);
   if (ogDesc && description) ogDesc.setAttribute('content', description);
-  if (ogUrl) ogUrl.setAttribute('content', `https://www.starcreativehyd.com${window.location.pathname}`);
+  if (ogUrl) ogUrl.setAttribute('content', `https://www.starcreative.in${window.location.pathname}`);
 }
 
 export function initRevealAnimations() {

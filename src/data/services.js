@@ -8,9 +8,9 @@ export const BUSINESS = {
   name: 'Star Creative',
   tagline: 'UPVC • Glass • Aluminium • Iron & Metal',
   city: 'Hyderabad',
-  phone: '+91-XXXXXXXXXX',          // TODO: Replace with real number
-  whatsapp: '91XXXXXXXXXX',         // TODO: Replace with real WhatsApp number
-  email: 'info@starcreativehyd.com', // TODO: Replace with real email
+  phone: '+91 74164 59689',
+  whatsapp: '917416459689',
+  email: 'starcreative79@gmail.com',
   address: {
     street: '[Street Address]',     // TODO: Replace with real address
     area: 'Hyderabad',
@@ -29,7 +29,7 @@ export const BUSINESS = {
     facebook:  '#', // TODO: Replace
     youtube:   '#', // TODO: Replace
   },
-  siteUrl: 'https://www.starcreativehyd.com',
+  siteUrl: 'https://www.starcreative.in',
 };
 
 /**
