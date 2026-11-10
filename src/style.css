@@ -3278,23 +3278,9 @@ body.is-homepage .site-header:not(.scrolled):not(.menu-open) .hamburger span { b
     border-radius: var(--radius-sm);
     justify-content: center;
   }
-  /* 3 Stat Cards in 1 Horizontal Row */
+  /* Hide hero stat cards (500+ Projects, 31 Services, 15+ Areas) on phone so hero feels clean and uncrowded */
   .hero-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-  }
-  .hero-stat-card {
-    min-width: 0;
-    padding: 0.75rem 0.4rem;
-    border-radius: var(--radius-sm);
-  }
-  .hero-stat-num {
-    font-size: 1.25rem;
-  }
-  .hero-stat-label {
-    font-size: 0.65rem;
-    color: rgba(255, 255, 255, 0.7);
+    display: none !important;
   }
 
   /* Trust Strip — 2x2 Grid on Phone */
